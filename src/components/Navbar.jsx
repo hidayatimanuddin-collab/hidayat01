@@ -14,37 +14,30 @@ function Navbar() {
         className="
           max-w-7xl mx-auto
           flex items-center justify-between
-          px-8 py-4
+          px-4 md:px-8
+          py-3 md:py-4
         "
       >
-
-        {/* 🔥 LOGO */}
         <Link
           to="/"
           className="flex items-center gap-4 group"
         >
-
           <div
             className="
               relative
-              w-16 h-16 rounded-3xl
+              w-12 h-12 md:w-16 md:h-16
+              rounded-3xl
               bg-gradient-to-br from-green-400 via-green-500 to-emerald-700
               flex items-center justify-center
-              text-white text-4xl
+              text-white
+              text-2xl md:text-4xl
               shadow-[0_10px_40px_rgba(34,197,94,0.5)]
               group-hover:rotate-6
               group-hover:scale-110
               transition-all duration-500
             "
           >
-
-            {/* GLOW */}
-            <div
-              className="
-                absolute inset-0 rounded-3xl
-                bg-green-400 blur-xl opacity-40
-              "
-            ></div>
+            <div className="absolute inset-0 rounded-3xl bg-green-400 blur-xl opacity-40"></div>
 
             <span className="relative z-10">
               🌾
@@ -52,30 +45,19 @@ function Navbar() {
           </div>
 
           <div>
-            <h1
-              className="
-                text-3xl font-black tracking-wide
-                text-white
-              "
-            >
+            <h1 className="text-lg md:text-3xl font-black tracking-wide text-white">
               Sahabat Tani
             </h1>
 
-            <p
-              className="
-                text-sm text-green-200
-                tracking-widest uppercase
-              "
-            >
+            <p className="hidden sm:block text-sm text-green-200 tracking-widest uppercase">
               Smart Farming System
             </p>
           </div>
         </Link>
 
-        {/* 🔥 SLOGAN */}
         <div
           className="
-            hidden md:flex
+            hidden lg:flex
             items-center
             bg-white/10
             border border-white/10
@@ -84,23 +66,12 @@ function Navbar() {
             shadow-lg
           "
         >
-
-          <p
-            className="
-              text-white font-semibold
-              tracking-wide
-              text-sm
-            "
-          >
+          <p className="text-white font-semibold tracking-wide text-sm">
             🌱 Smart Farming • Modern Agriculture • Digital Innovation
           </p>
-
         </div>
 
-        {/* 🔥 ACTION */}
         <div className="flex items-center gap-4">
-
-          {/* SETTINGS */}
           <Link
             to="/settings"
             className="
@@ -117,7 +88,6 @@ function Navbar() {
             ⚙️
           </Link>
 
-          {/* LOGOUT */}
           <button
             onClick={() => {
               localStorage.clear();
@@ -128,7 +98,8 @@ function Navbar() {
               bg-gradient-to-r from-red-500 to-red-600
               hover:from-red-600 hover:to-red-700
               text-white
-              px-6 py-3
+              px-3 md:px-6
+              py-2 md:py-3
               rounded-2xl
               text-sm font-bold
               shadow-lg shadow-red-500/30
@@ -138,7 +109,6 @@ function Navbar() {
           >
             Logout
           </button>
-
         </div>
       </div>
     </div>
