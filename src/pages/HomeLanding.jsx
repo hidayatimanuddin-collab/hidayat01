@@ -37,17 +37,15 @@ function HomeLanding() {
   return (
     <div className="min-h-screen overflow-hidden">
 
-      {/* 🔥 HERO */}
-      <div className="relative h-screen">
+      {/* HERO */}
+      <div className="relative min-h-screen pt-24 md:pt-0">
 
-        {/* BACKGROUND */}
         <img
           src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854"
           alt="pertanian"
           className="w-full h-full object-cover"
         />
 
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* CONTENT */}
@@ -55,22 +53,23 @@ function HomeLanding() {
           className="
             absolute inset-0
             flex flex-col justify-center
-            px-12
+            px-5 md:px-12
             text-white
+            z-10
           "
         >
 
-          <h1 className="text-6xl font-extrabold max-w-4xl leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold max-w-4xl leading-tight">
             Sistem Smart Farming
           </h1>
 
-          <p className="mt-6 text-xl text-gray-200 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-base md:text-xl text-gray-200 max-w-2xl leading-relaxed">
             Platform digital modern untuk membantu petani
             mengelola lahan, panen, irigasi, inventori pupuk,
             dan laporan pertanian secara realtime.
           </p>
 
-          <div className="flex gap-5 mt-10">
+          <div className="flex flex-col sm:flex-row gap-5 mt-10">
 
             <Link
               to="/lahan"
@@ -102,12 +101,22 @@ function HomeLanding() {
           </div>
         </div>
 
-        {/* 🔥 MENU SAMPING */}
+        {/* MENU SAMPING */}
         <div
           className="
-            absolute right-5 top-1/2
-            -translate-y-1/2
-            flex flex-col gap-5
+            absolute
+            bottom-4
+            left-0
+            right-0
+            flex md:flex-col
+            gap-4
+            overflow-x-auto
+            px-4
+            z-20
+            md:right-5
+            md:left-auto
+            md:top-1/2
+            md:-translate-y-1/2
           "
         >
 
@@ -116,7 +125,8 @@ function HomeLanding() {
               key={index}
               to={item.path}
               className="
-                w-24 h-24
+                w-16 h-16 md:w-24 md:h-24
+                shrink-0
                 bg-white/15 backdrop-blur-lg
                 border border-white/20
                 rounded-3xl
@@ -129,11 +139,11 @@ function HomeLanding() {
               "
             >
 
-              <span className="text-3xl mb-2">
+              <span className="text-xl md:text-3xl mb-2">
                 {item.icon}
               </span>
 
-              <span className="text-xs text-center font-semibold px-1">
+              <span className="hidden md:block text-xs text-center font-semibold px-1">
                 {item.name}
               </span>
 
@@ -142,6 +152,8 @@ function HomeLanding() {
 
         </div>
       </div>
+
+      {/* BAGIAN BAWAH PUNYAMU BIARIN TETAP */}
 
       {/* 🌱 INFORMASI PERTANIAN PREMIUM */}
       <div
